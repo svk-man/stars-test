@@ -14,9 +14,9 @@ const { open, close } = useModal({
 </script>
 
 <template>
-  <VButton @click="open" class="button">
+  <button @click="open" class="button">
     Open Modal
-  </VButton>
+  </button>
 
   <ModalsContainer />
 </template>

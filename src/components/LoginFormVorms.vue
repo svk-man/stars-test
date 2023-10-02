@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { ref } from "vue"
 import { useForm } from '@vorms/core'
+import Stars from "vue3-star-ratings";
 
 export type FormData = {
   account: string
@@ -30,11 +32,20 @@ const { value: account, attrs: accountAttrs } = register('account', {
 })
 const { value: password, attrs: passwordAttrs } = register('password')
 const { value: remember, attrs: rememberAttrs } = register('remember')
+
+const rating = ref(0)
 </script>
 
 <template>
   <h1 class="text-2xl mb-4">Login</h1>
   <form @submit="handleSubmit">
+    <Stars
+      v-model="rating"
+      :star-size="36"
+      star-color="#FBC031"
+      inactive-color="#E7E6E6"
+      :number-of-stars="5"
+      :disable-click="false" />
     <div class="field">
       <input
         v-model="account"
