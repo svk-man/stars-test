@@ -1,5 +1,8 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import { createVfm } from 'vue-final-modal'
+import 'vue-final-modal/style.css'
 
-createApp(App).mount('#app')
+const vfm = createVfm()
+createApp(App).use(vfm).mount('#app')
